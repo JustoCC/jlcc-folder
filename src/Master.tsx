@@ -1,7 +1,19 @@
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Pages from "./pages/export";
+
 export default function Master() {
+  const routes = createBrowserRouter([
+    {
+      path: "/",
+      element: <Pages.Home />
+    }
+  ],{
+    basename: "/jlcc-folder"
+  })
   return (
-    <div>
-      <h1>test p m l p l s</h1>
-    </div>
+    <RouterProvider router={routes} />
   )
 }
